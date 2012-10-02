@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+ 
+<!-- The f:view element is required to get certain components to work with webkit based browsers
+(Google Chrome and Safari) -->
+<f:view contentType="text/html">
+ 
+<h:head>
+    <!-- Add support for <meta>, <link>, and <scripts> here -->
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <!-- Change the title of this document!!! -->
+    <title>Rules of 72</title>
+     
+</h:head>
+ 
+<h:body>
+    <!-- Add your content here -->
+    <h1>Rules of 72</h1> 
+     <p>
+     Enter an interest rate as percentage of 100 to determine the number
+     of years it takes to double your money using the "rules of 72".
+     </p>
+     <h:form>
+     	<p:messages id="messages" />
+     	<p:panelGrid columns="2">
+     		<f:facet name="header">
+     			Rules of 72
+     		</f:facet>
+     		
+     		<h:outputLabel for="interestRate" value="Interest Rate:" />
+     		<p:inputText id="interestRate" 
+     			value="#{rulesOf72Bean.rulesOf72.interestRate}"
+     			required="true"
+     			requiredMessage="Interest Rate is required.">
+     		</p:inputText>
+     	
+     		<h:outputText />
+     		<p:commandButton value="Calculate" ajax="false"
+     		actionListener="#{rulesOf72Bean.submit}">
+     		</p:commandButton>
+     	</p:panelGrid>
+     </h:form>
+     
+     
+    <!-- End of content area -->
+</h:body>
+ 
+</f:view>
+ 
+</html>
